@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" type="txt/css" />
-    <script src="/js/main.js" defer></script>
+    <script type="module" src="/js/main.js" defer></script>
 
     <title>Movie trivia</title>
   </head>
   <body>
-    <section id="container"></section>
-    <button id="next-button">Next</button>
+    <section id="container">
+      <p></p>
+      <button class="option1">Primera opción</button>
+      <button class="option2">Segunda opción</button>
+      <button class="option3">Tercera opción</button>
+      <button class="option4">Cuarta opción</button>
+      <button id="next-button" onclick="alert `Siguiente pregunta`">
+        Next
+      </button>
+    </section>
+
     <section class="score-count"></section>
   </body>
 </html>

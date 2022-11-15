@@ -1,55 +1,47 @@
 "use strict";
+const titleQ = document.querySelector("p");
+const answer1 = document.querySelector("option1");
+const answer2 = document.querySelector("option2");
+const answer3 = document.querySelector("option3");
+const answer4 = document.querySelector("option4");
+const buttonNext = document.querySelector("next-button");
 
-const quizContent = document.querySelector("#container");
-const button = document.querySelector("#next-button");
-const score = document.querySelector("#score-count");
+async function quiz() {
+  const res = await fetch("json/quiz.json");
 
-let scoreCount = 0;
-let userCount = 0;
+  const body = await res.json();
 
-const questions = [
-  {
-    question: 'What breed of dog was Marley in the film "Marley & Me" (2008)?',
-    answers: [
-      "Labrador Retriever",
-      "Dalmatian",
-      "Golden Retriever",
-      "Shiba Inu",
-    ],
-    correct: "Labrador Retriever",
-  },
-];
+  console.log(body);
 
-const question = document.querySelector(questions.question);
-const answers = document.querySelector(questions.answers);
-const correct = document.querySelector(questions.correct);
+  titleQ.append(body[0].question);
+}
 
-const questionsJSON = JSON.stringify(questions);
-quizContent.append(questions[0].question);
+quiz();
 
-const listQuestions = document.createElement("ul");
-const firstQ = document.createElement("li");
-const secondQ = document.createElement("li");
-const thirthQ = document.createElement("li");
-const fourthQ = document.createElement("li");
+// const fetchQuestions = async () => {
+//   const res = await fetch("json/quiz.json");
 
-quizContent.append(listQuestions, firstQ, secondQ, thirthQ, fourthQ);
+//   const body = await res.json();
 
-firstQ.append(questions[0].answers[0]);
-secondQ.append(questions[0].answers[1]);
-thirthQ.append(questions[0].answers[2]);
-fourthQ.append(questions[0].answers[3]);
+//   console.log(body);
 
-// const patata = function (question, answers, correct) {
-//   this.question = question;
-//   this.answers = answers;
-//   this.correct = correct;
+//   titleQ.append(body[0].question);
 // };
 
-const selectAnswer = function (selectAnswer) {
-  let currentQuestion = this.questions[this.currentQuestionIndex];
-  if (currentQuestion.isCorrect(selectAnswer)) {
-    this.score++;
-  }
-  this.nextQuestion();
-};
+// fetchQuestions();
+
+// async function quiz() {
+//   try {
+//     const response = await fetch("json/quiz.json");
+//     const json = await response.json();
+
+//     return json;
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
+
+// console.log(quiz());
+
+// const json = fetchQuestions();
+// console.log(json);
