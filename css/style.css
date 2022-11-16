@@ -1,23 +1,18 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
 }
 
 #container p {
   text-align: center;
 }
 
-#buttOptions {
-  padding: 1rem;
-}
-
-#next-button {
+.buttOptions {
   padding: 1rem;
 }
 

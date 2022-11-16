@@ -1,72 +1,38 @@
 "use strict";
-const titleQ = document.querySelector("p");
-const answer1 = document.querySelector(".option1");
-const answer2 = document.querySelector(".option2");
-const answer3 = document.querySelector(".option3");
-const answer4 = document.querySelector(".option4");
-const answCorrect = document.querySelector(".hidecorrect");
-const buttonNext = document.querySelector("#next-button");
+const titleQ = document.querySelector("h1");
+const buttons = document.querySelectorAll(".buttOptions");
+const section = document.querySelector("#container");
 const scoreCount = document.querySelector(".score-count");
-let score = 0;
+const body = document.querySelector("body");
+let index = 48;
 
-async function quiz() {
+async function startQuiz() {
   const res = await fetch("json/quiz.json");
 
-  const body = await res.json();
+  const quiz = await res.json();
 
-  console.log(body);
+  function generateRound() {
+    titleQ.textContent = quiz[index].question;
+    for (let buttonIndex = 0; buttonIndex < buttons.length; buttonIndex++) {
+      buttons[buttonIndex].textContent = quiz[index].answers[buttonIndex];
+    }
+  }
+  generateRound();
 
-  //Podriamos hacer un if, para que cuando toque en la respuesta correcta, sume 1 a score, y sino, else, no sume nada.
-  //Y se podría hacer un for para que vaya cambiando el 0 de body, hasta 50, cada vez que le de al boton de next
-
-  titleQ.append(body[0].question);
-  answer1.append(body[0].answers[0]);
-  answer2.append(body[0].answers[1]);
-  answer3.append(body[0].answers[2]);
-  answer4.append(body[0].answers[3]);
-  answCorrect.append(body[0].correct);
-  score.append(scoreCount);
+  section.addEventListener("click", (event) => {
+    if (event.target.className !== "buttOptions") {
+      return;
+    }
+    if (event.target.textContent === quiz[index].correct) {
+      scoreCount.textContent++;
+    }
+    if (index < quiz.length - 1) {
+      index++;
+      generateRound();
+    } else {
+      body.innerHTML = `<h1>Tu puntuación es ${scoreCount.textContent}.</h1>`;
+    }
+  });
 }
 
-answCorrect.addEventListener("click", () => {
-  switch (answCorrect) {
-    case answer1:
-      score++;
-    case answer2:
-      score++;
-    case answer3:
-      score++;
-    case answer4:
-      score++;
-  }
-});
-
-quiz();
-
-// const fetchQuestions = async () => {
-//   const res = await fetch("json/quiz.json");
-
-//   const body = await res.json();
-
-//   console.log(body);
-
-//   titleQ.append(body[0].question);
-// };
-
-// fetchQuestions();
-
-// async function quiz() {
-//   try {
-//     const response = await fetch("json/quiz.json");
-//     const json = await response.json();
-
-//     return json;
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// }
-
-// console.log(quiz());
-
-// const json = fetchQuestions();
-// console.log(json);
+startQuiz();
