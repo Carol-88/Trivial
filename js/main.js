@@ -6,6 +6,8 @@ const answer3 = document.querySelector(".option3");
 const answer4 = document.querySelector(".option4");
 const answCorrect = document.querySelector(".hidecorrect");
 const buttonNext = document.querySelector("#next-button");
+const scoreCount = document.querySelector(".score-count");
+let score = 0;
 
 async function quiz() {
   const res = await fetch("json/quiz.json");
@@ -23,7 +25,21 @@ async function quiz() {
   answer3.append(body[0].answers[2]);
   answer4.append(body[0].answers[3]);
   answCorrect.append(body[0].correct);
+  score.append(scoreCount);
 }
+
+answCorrect.addEventListener("click", () => {
+  switch (answCorrect) {
+    case answer1:
+      score++;
+    case answer2:
+      score++;
+    case answer3:
+      score++;
+    case answer4:
+      score++;
+  }
+});
 
 quiz();
 
