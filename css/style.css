@@ -1,19 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Mali:wght@200;400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html {
   min-height: 100vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 214, 236);
+  font-family: "Mali", Arial, Helvetica, sans-serif;
 }
 
-#container p {
-  text-align: center;
+#container {
+  padding: 5rem;
+}
+
+h1 {
+  padding: 3rem;
+  text-decoration: underline dotted black;
+}
+
+h2 {
+  padding: 1rem;
 }
 
 .buttOptions {
   padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(248, 187, 187);
+  border-color: rgb(245, 131, 131);
+  font-family: "Mali", Arial, Helvetica, sans-serif;
+  font-size: 200;
+  box-shadow: 2px 4px 10px black;
+  margin-right: 1rem;
 }
 
-/* No se aplican los estiloooos */
+.score-count {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(187, 234, 248);
+  border-color: rgb(8, 98, 139);
+  border-radius: 50% 50%;
+  width: 50px;
+  height: 50px;
+  font-family: "Mali", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  box-shadow: 2px 4px 10px black;
+  margin-right: 1rem;
+}
+
+/* ¿Cómo centramos el número del score-count? */
