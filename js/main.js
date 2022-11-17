@@ -4,7 +4,7 @@ const buttons = document.querySelectorAll(".buttOptions");
 const section = document.querySelector("#container");
 const scoreCount = document.querySelector(".score-count");
 const body = document.querySelector("body");
-let index = 48;
+let index = 0;
 
 async function startQuiz() {
   const res = await fetch("json/quiz.json");
@@ -26,13 +26,11 @@ async function startQuiz() {
     if (event.target.textContent === quiz[index].correct) {
       scoreCount.textContent++;
     }
-    //Hacer el setTimeout para cambiar colores de los botones según la respuesta
     if (index < quiz.length - 1) {
       index++;
       generateRound();
     } else {
-      body.innerHTML = `<h1>¡¡Tu puntuación es: ${scoreCount.textContent}!!</h1>`;
-      //¿Cómo le damos css a este h1?
+      body.innerHTML = `<h1>¡¡Tu puntuación es ${scoreCount.textContent}!!</h1>`;
     }
   });
 }

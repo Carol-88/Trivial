@@ -11,7 +11,7 @@ html {
   text-align: center;
   justify-content: center;
   align-items: center;
-  background-color: rgb(245, 214, 236);
+  background-color: rgb(244, 226, 240);
   font-family: "Mali", Arial, Helvetica, sans-serif;
 }
 
@@ -20,8 +20,10 @@ html {
 }
 
 h1 {
-  padding: 3rem;
-  text-decoration: underline dotted black;
+  padding: 4rem;
+  margin-top: 2rem;
+  text-decoration: underline dotted rgb(103, 114, 151);
+  color: rgb(144, 205, 215);
 }
 
 h2 {
@@ -30,27 +32,28 @@ h2 {
 
 .buttOptions {
   padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: rgb(248, 187, 187);
+  background-color: rgb(252, 209, 209);
   border-color: rgb(245, 131, 131);
+  border-radius: 10% 10%;
   font-family: "Mali", Arial, Helvetica, sans-serif;
-  font-size: 200;
-  box-shadow: 2px 4px 10px black;
+  box-shadow: rgba(191, 77, 228, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
   margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 .score-count {
   padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: rgb(187, 234, 248);
-  border-color: rgb(8, 98, 139);
-  border-radius: 50% 50%;
+  background-color: rgb(213, 236, 240);
+  border-color: rgb(90, 129, 148);
+  border-radius: 30% 30%;
   width: 50px;
   height: 50px;
   font-family: "Mali", Arial, Helvetica, sans-serif;
   font-weight: bold;
-  box-shadow: 2px 4px 10px black;
-  margin-right: 1rem;
+  align-items: center;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 /* ¿Cómo centramos el número del score-count? */
