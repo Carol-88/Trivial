@@ -11,7 +11,7 @@ html {
   text-align: center;
   justify-content: center;
   align-items: center;
-  background-color: rgb(244, 226, 240);
+  background-color: rgb(255, 255, 255);
   font-family: "Mali", Arial, Helvetica, sans-serif;
 }
 
@@ -32,10 +32,10 @@ h2 {
 
 .buttOptions {
   padding: 1rem;
-  background-color: rgb(252, 209, 209);
-  border-color: rgb(245, 131, 131);
-  border-radius: 10% 10%;
+  background-color: rgb(32, 32, 32);
+  border-color: black;
   font-family: "Mali", Arial, Helvetica, sans-serif;
+  color: white;
   box-shadow: rgba(191, 77, 228, 0.19) 0px 10px 20px,
     rgba(0, 0, 0, 0.23) 0px 6px 6px;
   margin-right: 1rem;
@@ -44,13 +44,14 @@ h2 {
 
 .score-count {
   padding: 1rem;
-  background-color: rgb(213, 236, 240);
-  border-color: rgb(90, 129, 148);
+  background-color: rgb(32, 32, 32);
+  border-color: black;
   border-radius: 30% 30%;
   width: 50px;
   height: 50px;
   font-family: "Mali", Arial, Helvetica, sans-serif;
   font-weight: bold;
+  color: white;
   align-items: center;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
