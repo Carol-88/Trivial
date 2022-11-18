@@ -19,24 +19,24 @@ async function startQuiz() {
     }
 
     generateRound();
+
+    section.addEventListener("click", (event) => {
+      if (event.target.className !== "buttOptions") {
+        return;
+      }
+      if (event.target.textContent === quiz[index].correct) {
+        scoreCount.textContent++;
+      }
+      if (index < quiz.length - 1) {
+        index++;
+        generateRound();
+      } else {
+        body.innerHTML = `<h1>¡¡Tu puntuación es ${scoreCount.textContent}!!</h1>`;
+      }
+    });
   } catch (error) {
     console.log(error.message);
   }
 }
-
-section.addEventListener("click", (event) => {
-  if (event.target.className !== "buttOptions") {
-    return;
-  }
-  if (event.target.textContent === quiz[index].correct) {
-    scoreCount.textContent++;
-  }
-  if (index < quiz.length - 1) {
-    index++;
-    generateRound();
-  } else {
-    body.innerHTML = `<h1>¡¡Tu puntuación es ${scoreCount.textContent}!!</h1>`;
-  }
-});
 
 startQuiz();
