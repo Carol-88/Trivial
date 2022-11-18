@@ -7,26 +7,42 @@
 }
 
 html {
-  min-height: 100vh;
   text-align: center;
-  justify-content: center;
-  align-items: center;
   background-color: rgb(255, 255, 255);
   font-family: "Mali", Arial, Helvetica, sans-serif;
 }
 
+body {
+  min-height: 100vh;
+  display: grid;
+  flex-direction: column;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  height: 1fr;
+}
+
+main {
+  grid-area: main;
+  height: 1fr;
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(55, 54, 54);
+  color: white;
+}
+
+footer > p {
+  margin-top: 4rem;
+}
+
 #container {
-  padding: 5rem;
-}
-
-h1 {
-  padding: 4rem;
-  margin-top: 2rem;
-  text-decoration: underline dotted rgb(103, 114, 151);
-  color: rgb(144, 205, 215);
-}
-
-h2 {
   padding: 1rem;
 }
 
@@ -43,18 +59,15 @@ h2 {
 }
 
 .score-count {
-  padding: 1rem;
   background-color: rgb(32, 32, 32);
-  border-color: black;
   border-radius: 30% 30%;
   width: 50px;
   height: 50px;
+  margin-top: 2rem;
   font-family: "Mali", Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  font-size: large;
   color: white;
-  align-items: center;
-  text-align: center;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-/* ¿Cómo centramos el número del score-count? */
+/* Falta hacerlo responsive */
