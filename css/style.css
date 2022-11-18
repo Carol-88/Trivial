@@ -70,4 +70,28 @@ footer > p {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+.correct {
+  padding: 1rem;
+  background-color: rgb(131, 235, 131);
+  border-color: black;
+  font-family: "Mali", Arial, Helvetica, sans-serif;
+  color: white;
+  box-shadow: rgba(191, 77, 228, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.incorrect {
+  padding: 1rem;
+  background-color: rgb(253, 94, 94);
+  border-color: black;
+  font-family: "Mali", Arial, Helvetica, sans-serif;
+  color: white;
+  box-shadow: rgba(191, 77, 228, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
 /* Falta hacerlo responsive */
