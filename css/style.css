@@ -15,7 +15,7 @@ html {
 body {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 20rem 1fr 10rem;
+  grid-template-rows: auto 1fr 5rem;
   grid-auto-flow: row;
   flex-direction: column;
   grid-template-areas:
@@ -30,7 +30,6 @@ header {
 }
 img {
   width: 100%;
-  max-height: 20rem;
 }
 
 main {
@@ -38,14 +37,20 @@ main {
   padding: 3rem;
 }
 
+ul {
+  padding: 2rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
 footer {
   grid-area: footer;
   background-color: rgb(55, 54, 54);
   color: white;
-}
-
-footer > p {
-  margin-top: 4rem;
+  display: grid;
+  place-items: center;
 }
 
 #container {
@@ -60,8 +65,8 @@ footer > p {
   color: white;
   box-shadow: rgba(191, 77, 228, 0.19) 0px 10px 20px,
     rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  margin-right: 1rem;
-  margin-top: 1rem;
+  height: 100%;
+  width: 100%;
 }
 
 .score-count {
@@ -77,38 +82,25 @@ footer > p {
 }
 
 .correct {
-  padding: 1rem;
   background-color: rgb(131, 235, 131);
-  border-color: black;
-  font-family: "Mali", Arial, Helvetica, sans-serif;
-  color: white;
-  box-shadow: rgba(191, 77, 228, 0.19) 0px 10px 20px,
-    rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  margin-right: 1rem;
-  margin-top: 1rem;
 }
 
 .incorrect {
-  padding: 1rem;
   background-color: rgb(253, 94, 94);
-  border-color: black;
-  font-family: "Mali", Arial, Helvetica, sans-serif;
-  color: white;
-  box-shadow: rgba(191, 77, 228, 0.19) 0px 10px 20px,
-    rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  margin-right: 1rem;
-  margin-top: 1rem;
 }
 
-/* Falta hacerlo responsive */
-
-@media (min-width: 400px) {
-  body {
-    display: grid;
-    flex-direction: row;
+@media (max-width: 600px) {
+  html {
+    font-size: 12px;
   }
 
-  img {
-    min-height: 20rem;
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  ul {
+    grid-template-columns: 1fr;
   }
 }

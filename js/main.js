@@ -20,24 +20,25 @@ async function startQuiz() {
 
     generateRound();
 
-    section.addEventListener("click", (event) => {
+    const handleClick = (event) => {
       if (event.target.className !== "buttOptions") {
         return;
       }
+      section.removeEventListener("click", handleClick);
+      for (let i = 0; i < buttons.length; i++) {
+        if (buttons[i].textContent === quiz[index].correct)
+          buttons[i].classList.add("correct");
+      }
       if (event.target.textContent === quiz[index].correct) {
         scoreCount.textContent++;
-        event.target.className = "correct";
       } else {
-        for (let i = 0; i < buttons.length; i++) {
-          if (buttons[i].textContent === quiz[index].correct)
-            buttons[i].className = "correct";
-        }
-        event.target.className = "incorrect";
+        event.target.classList.add("incorrect");
       }
       if (index < quiz.length - 1) {
         index++;
         setTimeout(() => {
           generateRound();
+          section.addEventListener("click", handleClick);
           for (let i = 0; i < buttons.length; i++) {
             buttons[i].className = "buttOptions";
           }
@@ -45,7 +46,8 @@ async function startQuiz() {
       } else {
         body.innerHTML = `<h1>¡¡Tu puntuación es ${scoreCount.textContent}!!</h1>`;
       }
-    });
+    };
+    section.addEventListener("click", handleClick);
   } catch (error) {
     console.log(error.message);
   }
