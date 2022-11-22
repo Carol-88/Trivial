@@ -4,7 +4,8 @@ const buttons = document.querySelectorAll(".buttOptions");
 const section = document.querySelector("#container");
 const scoreCount = document.querySelector(".score-count");
 const body = document.querySelector("body");
-let index = 0;
+const main = document.querySelector("main");
+let index = 45;
 
 async function startQuiz() {
   try {
@@ -44,7 +45,7 @@ async function startQuiz() {
           }
         }, 2000);
       } else {
-        body.innerHTML = `<h1>¡¡Tu puntuación es ${scoreCount.textContent}!!</h1>`;
+        main.innerHTML = `<h1 class="finalScore">¡¡Tu puntuación es ${scoreCount.textContent}!!</h1>`;
       }
     };
     section.addEventListener("click", handleClick);
