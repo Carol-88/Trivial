@@ -5,7 +5,7 @@ const section = document.querySelector("#container");
 const scoreCount = document.querySelector(".score-count");
 const body = document.querySelector("body");
 const main = document.querySelector("main");
-let index = 45;
+let index = 0;
 
 async function startQuiz() {
   try {
